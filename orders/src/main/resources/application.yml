@@ -1,0 +1,26 @@
+server:
+  port: 10103
+  servlet:
+    context-path: /orders
+spring:
+  application:
+    name: orders #指定服务名
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/orders?serverTimezone=GMT%2b8
+    username: root
+    password: 12345678
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true	# 格式化sql
+        show_sql: true		# 显示sql
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10102/eureka
+  instance:
+    prefer-ip-address: true
+feign:   # 开启熔断器
+  hystrix:
+    enabled: true

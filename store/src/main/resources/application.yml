@@ -1,0 +1,24 @@
+server:
+  port: 10104
+  servlet:
+    context-path: /store
+spring:
+  application:
+    name: store #指定服务名
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/store?serverTimezone=GMT%2b8
+    username: root
+    password: 12345678
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true	# 格式化sql
+        show_sql: true		# 显示sql
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10102/eureka
+
+
+
